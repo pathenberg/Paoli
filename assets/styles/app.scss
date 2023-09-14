@@ -1,7 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 
 // Common css
-
+footer a{
+    color: whitesmoke;
+}
 a {
     text-decoration: none !important;
     list-style-type: none !important;
@@ -22,7 +24,7 @@ ul {
 
 
 footer{
-    background-color: aquamarine;
+    background-color: #170e24;
 }
 .search-container {
     position: relative;
@@ -139,6 +141,63 @@ footer{
         display: none !important;
 
     }
+    /* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles de base pour la navigation */
+nav ul {
+    list-style-type: none;
+    
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Styles pour le menu déroulant */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styles pour les liens du menu déroulant */
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
+
 
 
 
