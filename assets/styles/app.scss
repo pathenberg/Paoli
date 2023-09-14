@@ -1,12 +1,151 @@
 @import "~bootstrap/scss/bootstrap";
 
+// Common css
 
+a {
+    text-decoration: none !important;
+    list-style-type: none !important;
+}
+header{
+    background-color: whitesmoke;
+    
+}
+main{
+    background-color: white;
+}
 ul {
     list-style-type: none;
 }
 .hide-on-click {
     display: none;
   }
-.icon-p{
-    margin-right: 10px;
+
+
+footer{
+    background-color: aquamarine;
+}
+.search-container {
+    position: relative;
+    display: inline-block;
+    
+  }
+
+  .search-icon {
+    cursor: pointer;
+    
+  }
+  .search-icon-phone {
+    cursor: pointer;
+    
+  }
+
+  .search-input {
+    display: none;
+    width: 150px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+  }
+  .search-input-phone {
+    display: none;
+    width: 150px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+  }
+
+  .search-input.show {
+    display: block;
+  }
+  .search-input-phone.show {
+    display: block;
+  }
+  .search-border {
+    border-right: 1px solid #ccc; /* Couleur et style de la bordure */
+    padding-right: 10px; /* Ajoute un peu d'espace entre la bordure et le texte */
+  }
+  
+.icon-right{
+    margin-left: 20px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+
+
+
+}
+
+@media only screen and (max-width: 767px) {
+   
+
+
+
+
+   
+}
+
+/* Large devices (laptops/desktops/large screen, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media only screen and (max-width: 991px) {
+
+    #container-iframe-home {
+        padding:57% 0 0 0 !important;
+    }
+    .navbar.border-top.border-bottom {
+        border-top: none !important; /* Supprime la bordure supérieure */
+        border-bottom: none !important; /* Supprime la bordure inférieure */
+      }
+    #services, #contact{
+        display: none;
+    }
+    
+
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .search-input-phone{
+       
+        display: none !important;
+        
+      }
+    .search-icon-phone{
+        display: none !important;
+
+    }
+
+
+
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
