@@ -15,8 +15,16 @@ class Categories
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 40)]
     private ?string $nom = null;
+
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: SmallCategories::class)]
+    private Collection $smallCategories;
+
+    public function __construct()
+    {
+        $this->smallCategories = new ArrayCollection();
+    }
 
 
 
@@ -42,7 +50,40 @@ class Categories
     /**
      * @return Collection<int, Produits>
      */
+
+    /**
+     * @return Collection<int, SmallCategories>
+     */
+    public function getSmallCategories(): Collection
+    {
+        return $this->smallCategories;
+    }
+
+    public function addSmallCategory(SmallCategories $smallCategory): static
+    {
+        if (!$this->smallCategories->contains($smallCategory)) {
+            $this->smallCategories->add($smallCategory);
+            $smallCategory->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSmallCategory(SmallCategories $smallCategory): static
+    {
+        if ($this->smallCategories->removeElement($smallCategory)) {
+            // set the owning side to null (unless already changed)
+            if ($smallCategory->getCategory() === $this) {
+                $smallCategory->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
    
 
+    public function __toString(){
+        return $this->getNom();
+    }
     
 }

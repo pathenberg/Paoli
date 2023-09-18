@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ smallCategory.name }}{% endblock %}
+
+{% block body %}
+
+    {% for product in products %}
+        <div class="card" style="width: 18rem;">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.titre}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <a href="{{path('app_product', {id : product.id})}}" class="btn btn-primary">ACCÉDER AU PRODUIT</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

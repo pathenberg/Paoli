@@ -15,7 +15,8 @@
     
     <body>
     
-    {% include 'nav.html.twig' %}
+    {{ render(controller('App\\Controller\\NavBarController::index')) }}
+    {# {% include 'nav.html.twig' %} #}
     
     {% block body %}
    

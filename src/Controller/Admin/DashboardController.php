@@ -7,6 +7,8 @@ use App\Entity\Collection;
 use App\Entity\Contacts;
 use App\Entity\Membre;
 use App\Entity\Produits;
+use App\Entity\SmallCategories;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -51,7 +53,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Nos catégories', 'fas fa-list', Categories::class);
         yield MenuItem::linkToCrud('Nos collections', 'fas fa-list', Collection::class);
         yield MenuItem::linkToCrud('Nos contacts', 'fas fa-list', Contacts::class);
-        yield MenuItem::linkToCrud('Nos Membres', 'fas fa-list', Membre::class);
         yield MenuItem::linkToCrud('Nos Produits', 'fas fa-list', Produits::class);
-    }
+        yield MenuItem::linkToCrud('Nos Sous Catégories', 'fas fa-list', SmallCategories::class);
+        yield MenuItem::linkToCrud('Nos Users', 'fas fa-list', User::class);
+    }   
 }

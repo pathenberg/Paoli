@@ -43,16 +43,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav justify-content-center col-md-12">
+
+        {# {{dump(categories)}} #}
+        {% for category in categories %}
           <li class="nav-item dropdown">
-            <a class="nav-link text-dark" href="#">Joaillerie</a>
+            <a class="nav-link text-dark" href="#">{{category.nom}}</a>
              <div class="dropdown-content">
-                    <a href="#">Bagues</a>
+
+                  {% for smallCategory in category.smallCategories %}
+                    <a href="{{path('app_small_category', {id : smallCategory.id})}}">{{smallCategory.name}}</a>
+                  {% endfor %}
+                    {# <a href="#">Bagues</a>
                     <a href="#">Colliers</a>
                     <a href="#">Bracelets</a>
-                    <a href="#">Boucles d'oreilles</a><
+                    <a href="#">Boucles d'oreilles</a> #}
              </div>
           </li>
-          <li class="nav-item dropdown">
+          {% endfor %}
+          {# <li class="nav-item dropdown">
             <a class="nav-link text-dark" href="#">Mariage</a>
                <div class="dropdown-content">
                     <a href="#">Bagues de Fiançailles</a>
@@ -61,7 +69,7 @@
                     <a href="#">Bijoux de Mariage</a>
                    
               </div>
-          </li>
+          </li> #}
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">Unique</a>
           </li>

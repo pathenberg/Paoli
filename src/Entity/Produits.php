@@ -41,6 +41,12 @@ class Produits
     #[ORM\Column]
     private ?int $Prix = null;
 
+    #[ORM\ManyToOne(inversedBy: 'produits')]
+    private ?SmallCategories $smallCategory = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $titre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -150,6 +156,30 @@ class Produits
     public function setPrix(int $Prix): static
     {
         $this->Prix = $Prix;
+
+        return $this;
+    }
+
+    public function getSmallCategory(): ?SmallCategories
+    {
+        return $this->smallCategory;
+    }
+
+    public function setSmallCategory(?SmallCategories $smallCategory): static
+    {
+        $this->smallCategory = $smallCategory;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(string $titre): static
+    {
+        $this->titre = $titre;
 
         return $this;
     }
