@@ -3,6 +3,7 @@
 // Common css
 footer a{
     color: whitesmoke;
+
 }
 a {
     text-decoration: none !important;
@@ -17,14 +18,22 @@ main{
 }
 ul {
     list-style-type: none;
+    padding-left: 0!important;
 }
 .hide-on-click {
     display: none;
   }
 
 
+
+
 footer{
     background-color: #170e24;
+    
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    
 }
 .search-container {
     position: relative;
