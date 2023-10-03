@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProduitsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -46,6 +48,12 @@ class Produits
 
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
+
+ 
+
+    #[ORM\Column(length: 255)]
+    private ?string $nom = null;
+
 
     public function getId(): ?int
     {
@@ -180,6 +188,18 @@ class Produits
     public function setTitre(string $titre): static
     {
         $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): static
+    {
+        $this->nom = $nom;
 
         return $this;
     }

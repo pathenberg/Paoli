@@ -10,19 +10,27 @@
           
          </div>
   
-        <a href="#" class="nav-link text-black" id="contact">Contactez-nous &nbsp;</a>
+        <a href="{{path('app_contact')}}" class="nav-link text-black" id="contact">Contactez-nous &nbsp;</a>
         <a href="#" class="nav-link text-black" id="services">Services</a>
       </div>
       
       
 
       <div class="col-md-6 d-flex justify-content-end mt-2">
+      {% if app.user %}
         <!-- Icône pour le profil -->
-        <a href="#" class="text-black">
+        <a href="{{ path('app_profile') }}" class="text-black">
           <i class="fas fa-user" style="margin-right: 10px"></i>
         </a>
+      {% else %}  
+      <a href="{{ path('app_login') }}" class="text-black">
+          <i class="fas fa-user" style="margin-right: 10px"></i>
+      </a>
+      {% endif %}
+
+
         <!-- Icône pour le panier -->
-        <a href="#" class="text-black">
+        <a href="{{ path('cart') }}" class="text-black">
           <i class="fas fa-shopping-cart"></i>
         </a>
       </div>
@@ -43,6 +51,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav justify-content-center col-md-12">
+        
 
         {# {{dump(categories)}} #}
         {% for category in categories %}

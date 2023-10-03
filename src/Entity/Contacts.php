@@ -18,13 +18,13 @@ class Contacts
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $prénom = null;
+    private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
     private ?string $Email = null;
 
     #[ORM\Column(length: 15, nullable: true)]
-    private ?string $Téléphone = null;
+    private ?string $Telephone = null;
 
     #[ORM\Column(length: 200)]
     private ?string $reason = null;
@@ -49,14 +49,14 @@ class Contacts
         return $this;
     }
 
-    public function getPrénom(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->prénom;
+        return $this->prenom;
     }
 
-    public function setPrénom(string $prénom): static
+    public function setPrenom(string $prenom): static
     {
-        $this->prénom = $prénom;
+        $this->prenom = $prenom;
 
         return $this;
     }
@@ -73,14 +73,14 @@ class Contacts
         return $this;
     }
 
-    public function getTéléphone(): ?string
+    public function getTelephone(): ?string
     {
-        return $this->Téléphone;
+        return $this->Telephone;
     }
 
-    public function setTéléphone(?string $Téléphone): static
+    public function setTelephone(?string $Telephone): static
     {
-        $this->Téléphone = $Téléphone;
+        $this->Telephone = $Telephone;
 
         return $this;
     }
