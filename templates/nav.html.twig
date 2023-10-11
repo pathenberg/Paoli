@@ -10,8 +10,8 @@
           
          </div>
   
-        <a href="{{path('app_contact')}}" class="nav-link text-black" id="contact">Contactez-nous &nbsp;</a>
-        <a href="#" class="nav-link text-black" id="services">Services</a>
+ <a href="{{ path('app_contact') }}" class="nav-link text-black" id="contact" aria-label="Lien vers la page de contact">Contactez-nous &nbsp;</a>
+<a href="#" class="nav-link text-black" id="services" aria-label="Lien vers la page des services">Services</a>
       </div>
       
       
@@ -19,23 +19,23 @@
       <div class="col-md-6 d-flex justify-content-end mt-2">
       {% if app.user %}
         <!-- Icône pour le profil -->
-        <a href="{{ path('app_profile') }}" class="text-black">
+        <a href="{{ path('app_profile') }}" class="text-black" aria-label="Lien vers la page profil">
           <i class="fas fa-user" style="margin-right: 10px"></i>
         </a>
       {% else %}  
-      <a href="{{ path('app_login') }}" class="text-black">
+      <a href="{{ path('app_login') }}" class="text-black" aria-label="Lien vers la page de connexion">
           <i class="fas fa-user" style="margin-right: 10px"></i>
       </a>
       {% endif %}
 
 
         <!-- Icône pour le panier -->
-        <a href="{{ path('cart') }}" class="text-black">
+        <a href="{{ path('cart') }}" class="text-black" aria-label="Lien vers la page panier">
           <i class="fas fa-shopping-cart"></i>
         </a>
       </div>
       <div class="col-md-12 text-center mb-2">
-        <a href="{{ path('app_accueil')}}">
+        <a href="{{ path('app_accueil')}}" aria-label="Lien vers la page d'accueil">
           <img src="{{ asset('build/images/logo-paoli-bg.png') }}" style="width:20%" alt="logo">
         </a>
       </div>
@@ -44,28 +44,26 @@
 
   <!-- Navbar avec bordure supérieure et inférieure et marge en bas -->
 
-  <nav class="navbar navbar-expand-lg navbar-light  border-top border-bottom mb-4">
+  <nav class="navbar navbar-expand-lg navbar-light  border-top border-bottom ">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="menu-toggle-button">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav">
+    
         <ul class="nav justify-content-center col-md-12">
         
 
         {# {{dump(categories)}} #}
         {% for category in categories %}
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown animated-item">
             <a class="nav-link text-dark" href="#">{{category.nom}}</a>
              <div class="dropdown-content">
 
                   {% for smallCategory in category.smallCategories %}
                     <a href="{{path('app_small_category', {id : smallCategory.id})}}">{{smallCategory.name}}</a>
                   {% endfor %}
-                    {# <a href="#">Bagues</a>
-                    <a href="#">Colliers</a>
-                    <a href="#">Bracelets</a>
-                    <a href="#">Boucles d'oreilles</a> #}
+                   
              </div>
           </li>
           {% endfor %}
@@ -79,18 +77,20 @@
                    
               </div>
           </li> #}
-          <li class="nav-item">
+          <li class="nav-item animated-item">
             <a class="nav-link text-dark" href="#">Unique</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link text-dark search-border" href="#">La Maison Paoli</a>
+          <li class="nav-item animated-item">
+            <a class="nav-link text-dark search-border" href="{{ path('app_maison_paoli') }}">La Maison Paoli</a>
           </li>
             <li class="nav-item d-flex flex-column justify-content-center icon-right">
             <!-- Ajout d'une icône de loupe et d'un champ de texte caché -->
             <div class="search-container">
-              <i class="fas fa-search search-icon" id="search-icon"></i>
-              <input type="text" id="search-input" class="search-input">
+             <form class="d-flex" role="search">
+              <i class="fas fa-search search-icon" id="search-icon"  role="search"></i>
+              <input type="text" id="search-input" class="search-input" type="search" aria-label="Search">
+              </form>
             </div>
           </li>
         </ul>
@@ -98,5 +98,7 @@
     </div>
   </nav>
     </div>
+    
 
 </header>
+ 

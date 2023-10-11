@@ -6,6 +6,7 @@ use App\Entity\Order;
 use App\Entity\Wishlist;
 use App\Form\EventListener\ClearCartListener;
 use App\Form\EventListener\RemoveCartItemListener;
+use App\Form\EventListener\RemoveItemListener;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -18,7 +19,7 @@ class CartType extends AbstractType
     {
         $builder
             ->add('items', CollectionType::class, [
-                'entry_type' => CartItemType::class,
+                'entry_type' => CartItemType::class
             ])
             ->add('save', SubmitType::class)
             ->add('clear', SubmitType::class);

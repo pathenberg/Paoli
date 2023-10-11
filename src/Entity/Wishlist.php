@@ -47,23 +47,39 @@ class Wishlist
         return $this->items;
     }
 
-    public function addItem(WishlistItem $item): static
+    public function addItem(WishlistItem $item): self
     {
-        if (!$this->items->contains($item)) {
-            $this->items->add($item);
-            $item->setOrder($this);
+        foreach ($this->getItems() as $existingItem) {
+            // The item already exists, update the quantity
+            if ($existingItem->equals($item)) {
+                $existingItem->setQuantity(
+                    $existingItem->getQuantity() + $item->getQuantity()
+                );
+
+                return $this;
+            }
         }
+
+        $this->items[] = $item;
+        $item->setOrder($this);
 
         return $this;
     }
-
-    public function removeItem(WishlistItem $item): static
+    public function removeItem(WishlistItem $item): self
     {
         if ($this->items->removeElement($item)) {
             // set the owning side to null (unless already changed)
             if ($item->getOrder() === $this) {
                 $item->setOrder(null);
             }
+        }
+
+        return $this;
+    }
+    public function removeItems(): self
+    {
+        foreach ($this->getItems() as $item) {
+            $this->removeItem($item);
         }
 
         return $this;

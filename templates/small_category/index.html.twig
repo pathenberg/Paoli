@@ -4,15 +4,31 @@
 
 {% block body %}
 
-    {% for product in products %}
-        <div class="card" style="width: 18rem;">
-            <img src="" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{product.titre}}</h5>
-                <p class="card-text">{{product.description}}</p>
-                <a href="{{path('app_product', {id : product.id})}}" class="btn btn-primary">ACCÉDER AU PRODUIT</a>
-            </div>
+ <div class="container mt-5">
+     
+        <div class="row">
+            {% for product in products %}
+            {% if product.smallCategory.id == smallCategory.id %}
+           
+   <div class="col-md-3 mb-4">
+    <div class="card custom-card h-100">
+        <div class="text-center">
+            <img src="{{ asset('./images/produit/' ~ product.picture) }}" class="card-img-top custom-image" alt="{{ product.titre }}">
         </div>
-    {% endfor %}
+        <div class="card-body d-flex flex-column text-center">
+            <div class="mt-auto mb-3">
+                <h5 class="card-title">{{ product.titre }}</h5>
+                <div class="mt-2">
+                <p class="card-text"><strong> {{ product.prix }} €</strong></p>
+                </div>
+            </div>
+            <a href="{{ path('app_product', {id : product.id}) }}" class="btn btn-dark">Voir la fiche produit</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

@@ -68,6 +68,10 @@ class WishlistItem
 
         return $this;
     }
+    public function equals(WishlistItem $item): bool
+    {
+        return $this->getProduct()->getId() === $item->getProduct()->getId();
+    }
     public function getTotal(): float
     {
         return $this->getProduct()->getPrix() * $this->getQuantity();

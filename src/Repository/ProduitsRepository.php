@@ -38,6 +38,16 @@ class ProduitsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function findBySearch($search) {
+
+        return $this->createQueryBuilder('g')
+        ->where('g.description LIKE :search')
+        ->setParameter('search', '%' . $search . '%')
+        ->setMaxResults(10)
+        ->getQuery()
+        ->getResult();
+
+    }
 
 //    /**
 //     * @return Produits[] Returns an array of Produits objects

@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Entity\Wishlist;
 use App\Repository\OrderRepository;
 use App\Repository\WishlistRepository;
 use Doctrine\ORM\EntityManagerInterface;

@@ -54,6 +54,9 @@ class Produits
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $Picture = null;
+
 
     public function getId(): ?int
     {
@@ -200,6 +203,18 @@ class Produits
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->Picture;
+    }
+
+    public function setPicture(string $Picture): static
+    {
+        $this->Picture = $Picture;
 
         return $this;
     }

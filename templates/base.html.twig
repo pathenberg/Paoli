@@ -17,19 +17,20 @@
     
     {{ render(controller('App\\Controller\\NavBarController::index')) }}
     {# {% include 'nav.html.twig' %} #}
-    
+    <main>
     {% block body %}
    
 
   
     
     {% endblock %}
+    </main>
 
     {% include 'footer.html.twig' %}
     
  
-
-   
+    {# menu burger ici #}
+  
    </body>
 
 </html>

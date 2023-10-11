@@ -1,3 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail du produits{% endblock %}
+
+{% block body %}
+
 <div class="col-md-8">
     <h1 class="mt-4 mt-md-0">{{ product.nom }}</h1>
     <h2>{{ product.prix }} €</h2>
@@ -18,3 +24,4 @@
     {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
     {{ form_end(form) }}
 </div>
+{% endblock %}

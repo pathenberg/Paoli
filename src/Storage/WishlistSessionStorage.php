@@ -41,7 +41,7 @@ class WishlistSessionStorage
     }
 
     /**
-     * Gets the cart in session.
+     * Gets the wishlist in session.
      *
      * @return Wishlist|null
      */

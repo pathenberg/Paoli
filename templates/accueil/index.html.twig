@@ -1,20 +1,178 @@
+
+
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-{# <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/Projet-Paoli/src/Controller/AccueilController.php'|file_link(0) }}">src/Controller/AccueilController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/Projet-Paoli/templates/accueil/index.html.twig'|file_link(0) }}">templates/accueil/index.html.twig</a></code></li>
-    </ul>
-</div> #}
+    <div class="container mt-5">
+        
+        
+        <div class="row">
+           <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Bagues</h5>
+                             </div>
+                            <p>
+                                Ces bagues en diamant, au design contemporain en or de différentes couleurs, sauront vous séduire. Elles peuvent être portées seules pour une allure raffinée ou associées à d'autres bagues en or de la collection.
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 1}) }}" class="btn btn-dark">Voir nos bagues</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Alliances Homme</h5>
+                             </div>
+                            <p>
+                                Des alliances pour hommes qui allient style et élégance en toute simplicité.
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 2}) }}" class="btn btn-dark">Voir nos alliances pour Homme</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Alliances Femme</h5>
+                             </div>
+                            <p>
+                                Les alliances Paoli sont une célébration de l'amour, destinées à être les compagnons fidèles des femmes au quotidien. Qu'elles adoptent un style classique et minimaliste ou qu'elles suivent les dernières tendances, ces bijoux diamants mettront en valeur avec élégance votre bague de fiançailles. Tendances, des bijoux diamants qui saurons mettre en valeur votre bague de fiançailles.
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 3}) }}" class="btn btn-dark">Voir nos alliances pour Femme</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Colliers</h5>
+                             </div>
+                            <p>
+                                La subtile lueur de l’or qui constitue ces colliers en diamants en font un choix privilégié, même pour les femmes qui ne sont pas habituées à porter des bijoux.
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 4}) }}" class="btn btn-dark">Voir nos colliers</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Bracelets</h5>
+                             </div>
+                            <p>
+                                Le design contemporain, caractérisé par ses lignes épurées et ses angles prononcés, danse en harmonie avec chacun de vos pas
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 5}) }}" class="btn btn-dark">Voir nos bracelets</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Boucles d'oreilles</h5>
+                             </div>
+                            <p>
+Ces bijoux diamants ont été spécialement conçus pour épouser délicatement le lobe de l'oreille. Leur éclat lumineux et leur design minimaliste en font des pièces intemporelles qui s'harmonisent avec élégance à toutes vos tenues
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 6}) }}" class="btn btn-dark">Voir nos boucles d'oreilles</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Solitaires</h5>
+                             </div>
+                            <p>
+Une manière nouvelle et élégante d'exprimer son amour. Le solitaire Paoli est disponible sous forme de pendentif, de boucles d'oreilles ou de bracelet. Ce sont des bijoux diamants exceptionnels, parfaits pour se faire plaisir ou pour offrir en cadeau.
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 7}) }}" class="btn btn-dark">Voir nos solitaires</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-6">
+                <div class="home-product-card category-card">
+                    <div class="row">
+                        <div class="col-md-6 d-flex flex-column align-items-center justify-content-between">
+                            <div class="mt-2">
+                            <h5>Bagues de fiançailles</h5>
+                             </div>
+                            <p>
+                                Une proposition de mariage, la naissance d'un enfant, ou tout simplement l'expression d'un amour sincère, les solitaires Paoli capturent l'éternité de l'amour. Ces créations peuvent être personnalisées selon vos préférences, avec le diamant de vos rêves, pour une pièce vraiment unique.
+                            </p>
+                            <div class="mb-2">
+                            <a href="{{ path('app_small_category', {'id': 8}) }}" class="btn btn-dark">Voir nos bagues de fiançailles</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <img src="{{ asset('/build/images/bague_catégorie.png') }}" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
